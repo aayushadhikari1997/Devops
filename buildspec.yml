@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Checking index.html for Congratulations..."
+
+      - |
+        if grep -q "Congratulations" index.html; then
+          echo "SUCCESS: Congratulations word found!"
+        else
+          echo "ERROR: Congratulations word not found!"
+          exit 1
+        fi
